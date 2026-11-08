@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quran Education (QE) | Powered by Ashfaq Ali Zardari Store, LLP</title>
+    <meta name="description" content="Developing Hearts, Coding the Future of Faith. The premier Non-Profit Organization bridging Islamic Knowledge Centers and Modern Tech Industry.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        qgreen: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#10b981',
+                            600: '#0d8a6a',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b'
+                        },
+                        qpurple: {
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6b21a8',
+                            800: '#581c87'
+                        },
+                        qpink: {
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        arabic: ['Amiri', 'serif'],
+                        urdu: ['Noto Nastaliq Urdu', 'Amiri', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* Custom scrollbars and RTL helpers */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.05);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0d8a6a;
+            border-radius: 4px;
+        }
+        .rtl {
+            direction: rtl;
+        }
+        .font-urdu {
+            font-family: 'Noto Nastaliq Urdu', 'Amiri', serif;
+            line-height: 2.2;
+        }
+        .font-arabic {
+            font-family: 'Amiri', serif;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .dark .glass-card {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .tech-pattern {
+            background-image: radial-gradient(#10b981 0.75px, transparent 0.75px), radial-gradient(#7c3aed 0.75px, #f8fafc 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            opacity: 0.15;
+        }
+        .dark .tech-pattern {
+            background-image: radial-gradient(#10b981 0.75px, transparent 0.75px), radial-gradient(#ec4899 0.75px, #0f172a 0.75px);
+            opacity: 0.12;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 font-sans transition-colors duration-300 min-h-screen flex flex-col selection:bg-qgreen-500 selection:text-white">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-qpurple-700 via-qgreen-700 to-qpurple-800 text-white text-xs md:text-sm py-2 px-4 text-center flex items-center justify-between shadow-sm relative z-50">
+        <div class="max-w-7xl mx-auto w-full flex items-center justify-between px-2">
+            <div class="flex items-center gap-2">
+                <span class="bg-emerald-500 text-xs px-2 py-0.5 rounded-full font-bold uppercase tracking-wider text-slate-950">Official</span>
+                <span id="announcement-text" class="truncate max-w-xs sm:max-w-md md:max-w-none">
+                    Quran Education (QE) - Non-Profit NPO Powered by Ashfaq Ali Zardari Store, LLP.
+                </span>
+            </div>
+            <div class="flex items-center gap-4 text-xs">
+                <a href="https://whatsapp.com/channel/0029Vb6DhLj1noz1lQtp8u0o" target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center gap-1 hover:underline font-semibold text-emerald-300">
+                    <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Channel
+                </a>
+                <span class="hidden md:inline">|</span>
+                <span class="hidden md:inline text-slate-300">CUIN: 0234385 SECP</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Dual Branding Logos -->
+                <a href="#home" class="flex items-center gap-3 group focus:outline-none">
+                    <div class="relative flex items-center gap-2">
+                        <!-- QE Logo Icon representation -->
+                        <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-qgreen-600 via-qpurple-600 to-qpink-600 p-0.5 shadow-md group-hover:scale-105 transition-transform">
+                            <div class="w-full h-full bg-white dark:bg-slate-900 rounded-[10px] flex items-center justify-center">
+                                <i data-lucide="book-open-check" class="w-6 h-6 text-qgreen-600 dark:text-qgreen-500"></i>
+                            </div>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="font-extrabold text-lg md:text-xl tracking-tight bg-gradient-to-r from-qgreen-600 via-qpurple-600 to-qpink-600 bg-clip-text text-transparent">
+                                QURAN EDUCATION
+                            </span>
+                            <span class="text-[10px] uppercase font-bold tracking-wider text-slate-500 dark:text-slate-400 flex items-center gap-1">
+                                Powered by <span class="text-qpurple-600 dark:text-qpurple-400 font-semibold">AAZS LLP</span>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-1 xl:space-x-2 text-sm font-medium">
+                    <a href="#about" class="px-3 py-2 rounded-lg hover:text-qgreen-600 dark:hover:text-qgreen-400 transition-colors">About</a>
+                    <a href="#foundation" class="px-3 py-2 rounded-lg hover:text-qgreen-600 dark:hover:text-qgreen-400 transition-colors">Islamic Foundation</a>
+                    <a href="#ecosystem" class="px-3 py-2 rounded-lg hover:text-qgreen-600 dark:hover:text-qgreen-400 transition-colors">Activities</a>
+                    <a href="#specialties" class="px-3 py-2 rounded-lg hover:text-qgreen-600 dark:hover:text-qgreen-400 transition-colors">Specialties</a>
+                    <a href="#leadership" class="px-3 py-2 rounded-lg hover:text-qgreen-600 dark:hover:text-qgreen-400 transition-colors">Leadership</a>
+                    <a href="#founder" class="px-3 py-2 rounded-lg hover:text-qgreen-600 dark:hover:text-qgreen-400 transition-colors">Founder</a>
+                    <a href="#apps" class="px-3 py-2 rounded-lg hover:text-qgreen-600 dark:hover:text-qgreen-400 transition-colors">QE Apps</a>
+                    <a href="#contact" class="px-3 py-2 rounded-lg hover:text-qgreen-600 dark:hover:text-qgreen-400 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Controls: Language + Theme Switcher -->
+                <div class="hidden sm:flex items-center gap-3">
+                    
+                    <!-- Language Selector Dropdown -->
+                    <div class="relative">
+                        <select id="lang-select" onchange="changeLanguage(this.value)" class="bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-xs font-semibold rounded-lg px-2.5 py-2 pr-7 border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-qgreen-500 cursor-pointer">
+                            <option value="en">English (US)</option>
+                            <option value="ur">اردو (Urdu)</option>
+                            <option value="sd">سنڌي (Sindhi)</option>
+                            <option value="ar">العربية (Arabic)</option>
+                            <option value="zh">中文 (Chinese)</option>
+                            <option value="hi">हिन्दी (Hindi)</option>
+                            <option value="bn">বাংলা (Bengali)</option>
+                            <option value="id">Bahasa Indonesia</option>
+                            <option value="ja">日本語 (Japanese)</option>
+                            <option value="tr">Türkçe (Turkish)</option>
+                            <option value="fa">فارسی (Persian)</option>
+                            <option value="ko">한국어 (Korean)</option>
+                            <option value="vi">Tiếng Việt</option>
+                            <option value="th">ไทย (Thai)</option>
+                        </select>
+                    </div>
+
+                    <!-- Theme Switcher Button -->
+                    <button id="theme-toggle" onclick="toggleTheme()" title="Toggle Theme" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors focus:outline-none">
+                        <i id="theme-icon-sun" data-lucide="sun" class="w-4 h-4 hidden"></i>
+                        <i id="theme-icon-moon" data-lucide="moon" class="w-4 h-4"></i>
+                    </button>
+
+                    <!-- Join CTAs -->
+                    <a href="#contact" class="hidden xl:inline-flex items-center gap-1.5 px-4 py-2 text-xs font-bold text-white bg-gradient-to-r from-qgreen-600 to-qpurple-600 rounded-lg shadow-sm hover:opacity-95 transition-all">
+                        <span>Collaborate</span>
+                        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center gap-2 lg:hidden">
+                    <button onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200">
+                        <i id="theme-icon-mobile" data-lucide="moon" class="w-4 h-4"></i>
+                    </button>
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2 rounded-lg text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <div class="py-2 border-b border-slate-100 dark:border-slate-800">
+                <label class="block text-xs font-medium text-slate-500 mb-1">Select Language:</label>
+                <select onchange="changeLanguage(this.value)" class="w-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 text-sm rounded-lg p-2 border border-slate-200 dark:border-slate-700">
+                    <option value="en">English (US)</option>
+                    <option value="ur">اردو (Urdu)</option>
+                    <option value="sd">سنڌي (Sindhi)</option>
+                    <option value="ar">العربية (Arabic)</option>
+                    <option value="zh">中文 (Chinese)</option>
+                    <option value="hi">हिन्दी (Hindi)</option>
+                    <option value="bn">বাংলা (Bengali)</option>
+                    <option value="id">Bahasa Indonesia</option>
+                    <option value="ja">日本語 (Japanese)</option>
+                    <option value="tr">Türkçe (Turkish)</option>
+                    <option value="fa">فارسی (Persian)</option>
+                </select>
+            </div>
+            <a href="#about" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium hover:text-qgreen-600">About QE</a>
+            <a href="#foundation" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium hover:text-qgreen-600">Islamic Foundation</a>
+            <a href="#ecosystem" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium hover:text-qgreen-600">Skill Ecosystem</a>
+            <a href="#specialties" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium hover:text-qgreen-600">Specialties</a>
+            <a href="#leadership" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium hover:text-qgreen-600">Leadership</a>
+            <a href="#founder" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium hover:text-qgreen-600">Founder Profile</a>
+            <a href="#apps" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium hover:text-qgreen-600">Mobile Apps</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block py-2 text-sm font-medium hover:text-qgreen-600">Contact Us</a>
+            <a href="https://whatsapp.com/channel/0029Vb6DhLj1noz1lQtp8u0o" target="_blank" class="block w-full text-center py-2.5 bg-qgreen-600 text-white rounded-lg font-bold text-sm">
+                Join WhatsApp Channel
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-grow">
+
+        <!-- Hero Section -->
+        <section id="home" class="relative overflow-hidden py-16 md:py-24 bg-gradient-to-b from-emerald-50/50 via-white to-slate-50 dark:from-slate-900/60 dark:via-slate-950 dark:to-slate-950">
+            <div class="absolute inset-0 tech-pattern pointer-events-none"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-4xl mx-auto space-y-6">
+                    
+                    <!-- NPO Tag -->
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-qgreen-100 dark:bg-qgreen-900/40 border border-qgreen-300 dark:border-qgreen-700 text-qgreen-800 dark:text-qgreen-300 text-xs font-semibold">
+                        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+                        <span>Non-Profit Organization • Skill Exchange & Islamic Tech</span>
+                    </div>
+
+                    <!-- Main Hero Title -->
+                    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+                        <span id="hero-title">Developing Hearts,</span> <br class="hidden sm:inline">
+                        <span class="bg-gradient-to-r from-qgreen-600 via-qpurple-600 to-qpink-600 bg-clip-text text-transparent">
+                            Coding the Future of Faith.
+                        </span>
+                    </h1>
+
+                    <!-- Subtitle -->
+                    <p id="hero-subtitle" class="text-base sm:text-lg md:text-xl text-slate-600 dark:text-slate-300 leading-relaxed font-normal max-w-3xl mx-auto">
+                        The premier international Non-Profit Organization bridging the gap between traditional Islamic Knowledge Centers (Madaris & Mosques) and Modern Tech Industry Stakeholders. Empowering the Muslim Ummah through practical skills and native Quranic guidance.
+                    </p>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                        <a href="https://whatsapp.com/channel/0029Vb6DhLj1noz1lQtp8u0o" target="_blank" rel="noopener opacity" class="w-full sm:w-auto px-7 py-3.5 rounded-xl font-bold text-sm text-white bg-gradient-to-r from-qgreen-600 to-qgreen-700 hover:from-qgreen-700 hover:to-qgreen-800 shadow-lg shadow-qgreen-600/30 flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5">
+                            <i data-lucide="message-square" class="w-4 h-4"></i>
+                            <span>Join WhatsApp Channel</span>
+                        </a>
+                        <a href="#ecosystem" class="w-full sm:w-auto px-7 py-3.5 rounded-xl font-bold text-sm text-slate-800 dark:text-slate-100 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700 flex items-center justify-center gap-2 shadow-sm transition-all">
+                            <span>Explore Skill Exchange</span>
+                            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <!-- Power Tag -->
+                    <div class="pt-8 flex items-center justify-center gap-6 text-slate-500 dark:text-slate-400 text-xs font-medium">
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="shield-check" class="w-4 h-4 text-qpurple-500"></i>
+                            <span>Sharia Compliant Standards</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i data-lucide="building" class="w-4 h-4 text-qpink-500"></i>
+                            <span>Powered by Ashfaq Ali Zardari Store, LLP</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 text-qpurple-600 dark:text-qpurple-400 font-bold text-xs tracking-wider uppercase">
+                            <i data-lucide="compass" class="w-4 h-4"></i>
+                            <span>About Quran Education (QE)</span>
+                        </div>
+                        <h2 class="text-2xl sm:text-4xl font-bold text-slate-900 dark:text-white">
+                            A Dynamic Ecosystem for Faith & Skill Development
+                        </h2>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base">
+                            Quran Education (QE) is an international non-profit entity dedicated to the holistic transformation of the Muslim Ummah. We sit at the intersection of modern software engineering institutions, tech enterprises, and classical Islamic learning centers (Madaris, Mosques, and Community Foundations).
+                        </p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/50">
+                                <h3 class="font-bold text-qgreen-600 dark:text-qgreen-400 text-base mb-1 flex items-center gap-2">
+                                    <i data-lucide="eye" class="w-4 h-4"></i> Vision
+                                </h3>
+                                <p class="text-xs text-slate-600 dark:text-slate-400">
+                                    Building the world's largest collaborative network of tech developers, scholars, and youth spreading the authentic Quran & Sunnah in native languages.
+                                </p>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700/50">
+                                <h3 class="font-bold text-qpurple-600 dark:text-qpurple-400 text-base mb-1 flex items-center gap-2">
+                                    <i data-lucide="target" class="w-4 h-4"></i> Mission
+                                </h3>
+                                <p class="text-xs text-slate-600 dark:text-slate-400">
+                                    Bridging academia, industry, and Islamic religious institutions through mutual skill exchange, open-source technology, and authentic ethical guidance.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Visual Card Showcase -->
+                    <div class="relative">
+                        <div class="w-full rounded-2xl bg-gradient-to-tr from-qgreen-600 via-qpurple-600 to-qpink-600 p-1 shadow-2xl">
+                            <div class="bg-slate-900 rounded-[14px] p-6 text-white space-y-6">
+                                <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-10 h-10 rounded-lg bg-qgreen-500/20 flex items-center justify-center text-qgreen-400">
+                                            <i data-lucide="book-open" class="w-5 h-5"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="font-bold text-sm">QE Core Mandate</h4>
+                                            <p class="text-[11px] text-slate-400">Islam & Tech Integration</p>
+                                        </div>
+                                    </div>
+                                    <span class="px-2.5 py-1 bg-qgreen-500/20 text-qgreen-300 text-xs rounded-full font-mono">NPO status</span>
+                                </div>
+
+                                <ul class="space-y-3 text-xs text-slate-300">
+                                    <li class="flex items-start gap-2.5">
+                                        <i data-lucide="check-circle2" class="w-4 h-4 text-qgreen-400 shrink-0 mt-0.5"></i>
+                                        <span>Native language translations of Quranic commands and life boundaries.</span>
+                                    </li>
+                                    <li class="flex items-start gap-2.5">
+                                        <i data-lucide="check-circle2" class="w-4 h-4 text-qpurple-400 shrink-0 mt-0.5"></i>
+                                        <span>Two-way skill exchange between software engineers and Madarsa scholars.</span>
+                                    </li>
+                                    <li class="flex items-start gap-2.5">
+                                        <i data-lucide="check-circle2" class="w-4 h-4 text-qpink-400 shrink-0 mt-0.5"></i>
+                                        <span>Ethical AI & Software solutions complying with international Islamic standards.</span>
+                                    </li>
+                                </ul>
+
+                                <div class="p-3 bg-slate-800/80 rounded-xl text-[11px] text-slate-400 flex items-center justify-between">
+                                    <span>Incubated by Ashfaq Ali Zardari Store, LLP</span>
+                                    <a href="https://www.AshfaqAliZardariStore.co" target="_blank" class="text-qpurple-400 hover:underline">Visit Parent Entity →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Islamic Foundation Section -->
+        <section id="foundation" class="py-16 bg-slate-50 dark:bg-slate-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12 space-y-3">
+                    <span class="text-qgreen-600 dark:text-qgreen-400 font-bold text-xs uppercase tracking-wider">Core Pillar</span>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">Our Authentic Islamic Foundation</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base">
+                        Rooted in the Quran, Prophetic Sunnah, and the wisdom of the 4 Rashidun Caliphs to guide human life, character, and governance.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- Card 1 -->
+                    <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-slate-200 dark:border-slate-800">
+                        <div class="w-12 h-12 rounded-xl bg-qgreen-100 dark:bg-qgreen-900/40 text-qgreen-600 dark:text-qgreen-400 flex items-center justify-center mb-4">
+                            <i data-lucide="scroll" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Message of Allah</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Deep learning of Allah's Commands, boundaries, life laws, death, and preparation for the Day of Judgment (Aakhirah).
+                        </p>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-slate-200 dark:border-slate-800">
+                        <div class="w-12 h-12 rounded-xl bg-qpurple-100 dark:bg-qpurple-900/40 text-qpurple-600 dark:text-qpurple-400 flex items-center justify-center mb-4">
+                            <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Prophetic Sunnah</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Practicing the sermons (Khutba), noble character, and practical guidance of the Last Messenger Prophet Muhammad (PBUH).
+                        </p>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-slate-200 dark:border-slate-800">
+                        <div class="w-12 h-12 rounded-xl bg-qpink-100 dark:bg-qpink-900/40 text-qpink-600 dark:text-qpink-400 flex items-center justify-center mb-4">
+                            <i data-lucide="crown" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">4 Rashidun Khalifas</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Learning Islamic decision-making, justice, and statehood principles from Hazrat Abu Bakr, Umar, Uthman, and Ali (R.A).
+                        </p>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="glass-card p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-slate-200 dark:border-slate-800">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4">
+                            <i data-lucide="award" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">Path to Jannat</h3>
+                        <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                            Emphasizing 5 Pillars of Islam, Momin characteristics, Naik Amal (Good Deeds), and practical righteousness in daily life.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Skill & Exchange Ecosystem Table -->
+        <section id="ecosystem" class="py-16 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-10 space-y-2">
+                    <span class="text-qpurple-600 dark:text-qpurple-400 font-bold text-xs uppercase tracking-wider">Exchange Matrix</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white">Skill & Exchange Development Ecosystem</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm">
+                        A structured two-way transfer of skills between Islamic Institutions and Tech Enterprises.
+                    </p>
+                </div>
+
+                <div class="overflow-x-auto rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                    <table class="w-full text-left text-xs sm:text-sm">
+                        <thead class="bg-slate-100 dark:bg-slate-800/80 text-slate-900 dark:text-slate-100 uppercase font-semibold">
+                            <tr>
+                                <th class="p-4">Program Pillar</th>
+                                <th class="p-4 text-qgreen-600 dark:text-qgreen-400">To Islamic Institutions (Madaris/Communities)</th>
+                                <th class="p-4 text-qpurple-600 dark:text-qpurple-400">From Tech Companies & Stakeholders</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-200 dark:divide-slate-800 text-slate-600 dark:text-slate-300">
+                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                                <td class="p-4 font-bold text-slate-900 dark:text-white">Professional Uplift</td>
+                                <td class="p-4">Software Engineering, Digital Skills, Modern Communication & AI Bootcamps.</td>
+                                <td class="p-4">Mentorship programs, internships, and integration support for Madarsa graduates.</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                                <td class="p-4 font-bold text-slate-900 dark:text-white">Spiritual Connect</td>
+                                <td class="p-4">Qualified Ulama offering authentic Quran & Hadees study sessions.</td>
+                                <td class="p-4">Workshops on Corporate Ethics, Morality, and Halal Business derived from Quran.</td>
+                            </tr>
+                            <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/30">
+                                <td class="p-4 font-bold text-slate-900 dark:text-white">Resource Exchange</td>
+                                <td class="p-4">Provision of modern computers, internet facilities, and open software licenses.</td>
+                                <td class="p-4">Building custom digital platforms (Web Apps, Native Translation Apps) for Madaris.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Specialties Grid -->
+        <section id="specialties" class="py-16 bg-slate-50 dark:bg-slate-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12 space-y-2">
+                    <span class="text-qpink-600 dark:text-qpink-400 font-bold text-xs uppercase tracking-wider">Our Capabilities</span>
+                    <h2 class="text-2xl sm:text-4xl font-bold text-slate-900 dark:text-white">Core Specialties & Disciplines</h2>
+                </div>
+
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+                    
+                    <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3">
+                        <i data-lucide="globe-2" class="w-5 h-5 text-qgreen-500 shrink-0"></i>
+                        <span class="text-xs sm:text-sm font-semibold">Native Language Tafseer</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3">
+                        <i data-lucide="code" class="w-5 h-5 text-qpurple-500 shrink-0"></i>
+                        <span class="text-xs sm:text-sm font-semibold">Software Engineering</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3">
+                        <i data-lucide="coins" class="w-5 h-5 text-qpink-500 shrink-0"></i>
+                        <span class="text-xs sm:text-sm font-semibold">Halal Riba-Free Finance</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3">
+                        <i data-lucide="smartphone" class="w-5 h-5 text-qgreen-500 shrink-0"></i>
+                        <span class="text-xs sm:text-sm font-semibold">Mobile App Development</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3">
+                        <i data-lucide="brain-circuit" class="w-5 h-5 text-qpurple-500 shrink-0"></i>
+                        <span class="text-xs sm:text-sm font-semibold">AI & Machine Learning</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3">
+                        <i data-lucide="database" class="w-5 h-5 text-qpink-500 shrink-0"></i>
+                        <span class="text-xs sm:text-sm font-semibold">Data Science & Analytics</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3">
+                        <i data-lucide="shield" class="w-5 h-5 text-qgreen-500 shrink-0"></i>
+                        <span class="text-xs sm:text-sm font-semibold">Ethical Cyber Security</span>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center gap-3">
+                        <i data-lucide="users" class="w-5 h-5 text-qpurple-500 shrink-0"></i>
+                        <span class="text-xs sm:text-sm font-semibold">Student Leadership</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Leadership Section -->
+        <section id="leadership" class="py-16 bg-white dark:bg-slate-900 border-y border-slate-200 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12 space-y-2">
+                    <span class="text-qpurple-600 dark:text-qpurple-400 font-bold text-xs uppercase tracking-wider">Governance & Org Structure</span>
+                    <h2 class="text-2xl sm:text-4xl font-bold text-slate-900 dark:text-white">Our Leadership Framework</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    
+                    <!-- Executive Board -->
+                    <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 space-y-4">
+                        <h3 class="text-lg font-bold text-qgreen-600 dark:text-qgreen-400 border-b border-slate-200 dark:border-slate-700 pb-2">
+                            Executive Board (EB)
+                        </h3>
+                        <ul class="space-y-3 text-xs sm:text-sm">
+                            <li class="flex flex-col">
+                                <span class="font-bold text-slate-900 dark:text-white">Founding Director / Chairperson</span>
+                                <span class="text-slate-500 dark:text-slate-400">Primary visionary responsible for strategic direction and compliance.</span>
+                            </li>
+                            <li class="flex flex-col">
+                                <span class="font-bold text-slate-900 dark:text-white">Director of Islamic Affairs & Community</span>
+                                <span class="text-slate-500 dark:text-slate-400">Ulama board ensuring theological accuracy of content & translation.</span>
+                            </li>
+                            <li class="flex flex-col">
+                                <span class="font-bold text-slate-900 dark:text-white">Director of Industry & Tech Skills</span>
+                                <span class="text-slate-500 dark:text-slate-400">Liaison with tech enterprises and IT curriculum heads.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Execution Committee -->
+                    <div class="p-6 rounded-2xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700/60 space-y-4">
+                        <h3 class="text-lg font-bold text-qpurple-600 dark:text-qpurple-400 border-b border-slate-200 dark:border-slate-700 pb-2">
+                            Execution Committee (Leads & Officers)
+                        </h3>
+                        <ul class="space-y-3 text-xs sm:text-sm">
+                            <li class="flex flex-col">
+                                <span class="font-bold text-slate-900 dark:text-white">Director - Native Translation Programs</span>
+                                <span class="text-slate-500 dark:text-slate-400">Oversees regional language conversion teams worldwide.</span>
+                            </li>
+                            <li class="flex flex-col">
+                                <span class="font-bold text-slate-900 dark:text-white">Director - Tech & Digital Platforms</span>
+                                <span class="text-slate-500 dark:text-slate-400">Manages open-source apps (Noor ul Quran, Salah Tracker).</span>
+                            </li>
+                            <li class="flex flex-col">
+                                <span class="font-bold text-slate-900 dark:text-white">Outreach & Madarsa Liaison Leads</span>
+                                <span class="text-slate-500 dark:text-slate-400">Coordinates on-ground bootcamps in Islamic centers.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Founder Profile Section -->
+        <section id="founder" class="py-16 bg-gradient-to-br from-slate-900 via-slate-950 to-qpurple-950 text-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <div class="lg:col-span-4 text-center">
+                        <div class="inline-block p-1 rounded-2xl bg-gradient-to-r from-qgreen-500 via-qpurple-500 to-qpink-500 shadow-2xl mb-4">
+                            <div class="w-48 h-48 sm:w-56 sm:h-56 rounded-xl bg-slate-800 flex items-center justify-center overflow-hidden relative">
+                                <i data-lucide="user-check" class="w-24 h-24 text-slate-600"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold">Ashfaq Ali Zardari</h3>
+                        <p class="text-xs text-qgreen-400 font-medium">Founder & Sr. Software Engineer</p>
+                        <p class="text-[11px] text-slate-400 mt-1">Karachi, Pakistan</p>
+                    </div>
+
+                    <div class="lg:col-span-8 space-y-4">
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-qpurple-500/20 text-qpurple-300 text-xs font-semibold">
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Founder Profile & Vision
+                        </div>
+                        <h2 class="text-2xl sm:text-3xl font-extrabold leading-snug">
+                            Bridging Technical Mastery with Deen & Quran Education
+                        </h2>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                            Ashfaq Ali Zardari is a Pakistani Sr. Software Engineer, Developer, and Founder based in Karachi, pursuing BS Computer Science at SZABIST University with prior diplomas from Aptech Learning. He specializes in .NET, Web APIs, SQL, and cross-platform app ecosystems.
+                        </p>
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                            In 2023, he established <strong>Ashfaq Ali Zardari Store, LLP.</strong> (CUIN 0234385 SECP). Driven by the purpose of serving Islam, he initiated <strong>Quran Education (QE)</strong> to ensure that every Muslim can understand Allah's words in their native tongue while bridging modern software talent into religious organizations.
+                        </p>
+                        <div class="pt-2 flex flex-wrap items-center gap-3">
+                            <a href="https://www.AshfaqAliZardariStore.co" target="_blank" class="px-4 py-2 bg-qgreen-600 hover:bg-qgreen-700 text-white rounded-lg font-bold text-xs flex items-center gap-2">
+                                <span>Visit AAZS Corporate Site</span>
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Mobile Apps -->
+        <section id="apps" class="py-16 bg-slate-50 dark:bg-slate-950">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12 space-y-2">
+                    <span class="text-qgreen-600 dark:text-qgreen-400 font-bold text-xs uppercase tracking-wider">Digital Ecosystem</span>
+                    <h2 class="text-2xl sm:text-4xl font-bold text-slate-900 dark:text-white">Featured Mobile Applications</h2>
+                    <p class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm">
+                        Innovative mobile products developed and supported by Quran Education & AAZS.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    
+                    <!-- App 1 -->
+                    <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-qgreen-500/10 text-qgreen-600 dark:text-qgreen-400 flex items-center justify-center font-bold">
+                            L
+                        </div>
+                        <h3 class="font-bold text-base text-slate-900 dark:text-white">Ledgr</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Offline finance ledger built on Halal business accounting principles.</p>
+                        <span class="inline-block text-[10px] font-mono bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-600 dark:text-slate-300">Android / iOS</span>
+                    </div>
+
+                    <!-- App 2 -->
+                    <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-qpurple-500/10 text-qpurple-600 dark:text-qpurple-400 flex items-center justify-center font-bold">
+                            NQ
+                        </div>
+                        <h3 class="font-bold text-base text-slate-900 dark:text-white">Noor ul Quran</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Ad-free Quran video lectures and native translation platform.</p>
+                        <span class="inline-block text-[10px] font-mono bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-600 dark:text-slate-300">Core QE Product</span>
+                    </div>
+
+                    <!-- App 3 -->
+                    <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-qpink-500/10 text-qpink-600 dark:text-qpink-400 flex items-center justify-center font-bold">
+                            ST
+                        </div>
+                        <h3 class="font-bold text-base text-slate-900 dark:text-white">Salah Tracker</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Manage daily prayers and Qaza prayer logs seamlessly.</p>
+                        <span class="inline-block text-[10px] font-mono bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-600 dark:text-slate-300">Free Utilities</span>
+                    </div>
+
+                    <!-- App 4 -->
+                    <div class="bg-white dark:bg-slate-900 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-3">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
+                            TC
+                        </div>
+                        <h3 class="font-bold text-base text-slate-900 dark:text-white">Islamic Tasbih Counter</h3>
+                        <p class="text-xs text-slate-500 dark:text-slate-400">Digital counter for organized daily dhikr and azkar.</p>
+                        <span class="inline-block text-[10px] font-mono bg-slate-100 dark:bg-slate-800 px-2 py-0.5 rounded text-slate-600 dark:text-slate-300">Utility App</span>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    
+                    <div class="space-y-6">
+                        <div class="inline-flex items-center gap-2 text-qgreen-600 dark:text-qgreen-400 font-bold text-xs uppercase tracking-wider">
+                            <i data-lucide="mail" class="w-4 h-4"></i> Contact & Corporate Office
+                        </div>
+                        <h2 class="text-2xl sm:text-4xl font-bold text-slate-900 dark:text-white">Get in Touch</h2>
+                        <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                            For collaborations, Madarsa IT integration, skill exchange initiatives, or general inquiries, reach out directly to our global headquarters in Karachi, Pakistan.
+                        </p>
+
+                        <div class="space-y-4 text-xs sm:text-sm text-slate-700 dark:text-slate-300">
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="map-pin" class="w-5 h-5 text-qpurple-500 shrink-0 mt-0.5"></i>
+                                <div>
+                                    <span class="font-bold block text-slate-900 dark:text-white">Headquarters Office:</span>
+                                    <span>504, 5th Floor, Block A-2, Makki Square, Harinand Street, Garden Police Line Road, Karachi, Sindh 74400, Pakistan.</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="phone" class="w-5 h-5 text-qgreen-500 shrink-0"></i>
+                                <div>
+                                    <span class="font-bold block text-slate-900 dark:text-white">Phone / WhatsApp:</span>
+                                    <span>+92 330 8060604 • +92 315 2260604</span>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-3">
+                                <i data-lucide="mail" class="w-5 h-5 text-qpink-500 shrink-0"></i>
+                                <div>
+                                    <span class="font-bold block text-slate-900 dark:text-white">Official Emails:</span>
+                                    <span>info@ashfaqalizardaristore.co | support@ashfaqalizardaristore.co</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="bg-slate-50 dark:bg-slate-800/60 p-6 sm:p-8 rounded-2xl border border-slate-200 dark:border-slate-700">
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-4">Send a Message</h3>
+                        <form onsubmit="handleFormSubmit(event)" class="space-y-4 text-xs sm:text-sm">
+                            <div>
+                                <label class="block text-slate-600 dark:text-slate-400 font-medium mb-1">Your Full Name</label>
+                                <input type="text" required placeholder="Name" class="w-full px-3 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-qgreen-500 focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-slate-600 dark:text-slate-400 font-medium mb-1">Email Address</label>
+                                <input type="email" required placeholder="email@example.com" class="w-full px-3 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-qgreen-500 focus:outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-slate-600 dark:text-slate-400 font-medium mb-1">Subject / Inquiry Type</label>
+                                <select class="w-full px-3 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-qgreen-500 focus:outline-none">
+                                    <option>Skill Exchange Program</option>
+                                    <option>Madarsa Integration</option>
+                                    <option>Native Language Translation</option>
+                                    <option>General Support</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-slate-600 dark:text-slate-400 font-medium mb-1">Message</label>
+                                <textarea rows="3" required placeholder="How can we collaborate?" class="w-full px-3 py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 focus:ring-2 focus:ring-qgreen-500 focus:outline-none"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3 bg-gradient-to-r from-qgreen-600 to-qpurple-600 text-white font-bold rounded-lg hover:opacity-95 transition-opacity">
+                                Submit Message
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 text-xs py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                
+                <div class="space-y-3 md:col-span-2">
+                    <div class="flex items-center gap-2">
+                        <span class="font-bold text-lg text-white">QURAN EDUCATION</span>
+                        <span class="text-[10px] bg-qgreen-900 text-qgreen-300 px-2 py-0.5 rounded">NPO</span>
+                    </div>
+                    <p class="text-slate-400 max-w-md">
+                        Powered by <strong>Ashfaq Ali Zardari Store, LLP</strong>. Dedicated to spreading authentic Quran education, native language understanding, and bridging tech skill ecosystems worldwide.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-3 uppercase tracking-wider text-[11px]">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="hover:text-qgreen-400">About Organization</a></li>
+                        <li><a href="#foundation" class="hover:text-qgreen-400">Islamic Foundation</a></li>
+                        <li><a href="#ecosystem" class="hover:text-qgreen-400">Skills Exchange</a></li>
+                        <li><a href="#founder" class="hover:text-qgreen-400">Founder Profile</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-bold text-white mb-3 uppercase tracking-wider text-[11px]">Compliance & Governance</h4>
+                    <ul class="space-y-2">
+                        <li><button onclick="openModal('modal-privacy')" class="hover:text-qgreen-400">Privacy Policy</button></li>
+                        <li><button onclick="openModal('modal-terms')" class="hover:text-qgreen-400">Terms & Conditions</button></li>
+                        <li><button onclick="openModal('modal-cookies')" class="hover:text-qgreen-400">Cookie Policy</button></li>
+                        <li><button onclick="openModal('modal-standards')" class="hover:text-qgreen-400">OIC Islamic Tech Standards</button></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500">
+                <p>© 2026 Quran Education (QE) • Ashfaq Ali Zardari Store, LLP (CUIN 0234385 SECP). All Rights Reserved.</p>
+                <div class="flex items-center gap-4">
+                    <a href="https://whatsapp.com/channel/0029Vb6DhLj1noz1lQtp8u0o" target="_blank" class="hover:text-emerald-400">WhatsApp Channel</a>
+                    <span>•</span>
+                    <a href="https://www.AshfaqAliZardariStore.co" target="_blank" class="hover:text-qpurple-400">AAZS Store Portal</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Compliance Modals -->
+    <div id="modal-backdrop" class="fixed inset-0 bg-slate-950/70 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-2xl w-full p-6 space-y-4 max-h-[85vh] overflow-y-auto relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+            <div id="modal-content"></div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Message -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-slate-900 text-white px-4 py-3 rounded-xl shadow-2xl z-50 transform translate-y-20 opacity-0 transition-all flex items-center gap-3 border border-slate-700">
+        <i data-lucide="check-circle" class="w-5 h-5 text-qgreen-400"></i>
+        <span id="toast-message" class="text-xs font-medium">Message sent successfully!</span>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // Language Translation Dictionaries
+        const translations = {
+            en: {
+                announcement: "Quran Education (QE) - Non-Profit NPO Powered by Ashfaq Ali Zardari Store, LLP.",
+                heroTitle: "Developing Hearts, Coding the Future of Faith.",
+                heroSubtitle: "The premier international Non-Profit Organization bridging the gap between traditional Islamic Knowledge Centers (Madaris & Mosques) and Modern Tech Industry Stakeholders.",
+                isRtl: false
+            },
+            ur: {
+                announcement: "قرآن ایجوکیشن (QE) - غیر منافع بخش تنظیم (NPO) زیر اہتمام اشفاق علی زرداری اسٹور ایل ایل پی",
+                heroTitle: "دلوں کی ترقی، ایمان کے مستقبل کی کوڈنگ۔",
+                heroSubtitle: "اسلامی علوم کے مراکز (مدارس و مساجد) اور جدید ٹیکنالوجی انڈسٹری کے درمیان فاصلوں کو ختم کرنے والی اولین بین الاقوامی تنظیم۔",
+                isRtl: true
+            },
+            sd: {
+                announcement: "قرآن ايجوڪيشن (QE) - اشفاق علي زرداري اسٽور LLP تحت هلندڙ غير منافع بخش تنظيم",
+                heroTitle: "دلن جي ترقي، ايمان جي مستقبل جي ڪوڊنگ.",
+                heroSubtitle: "اسلامي تعليمي مرڪزن ۽ جديد ٽيڪنالوجي صنعتن کي پاڻ ۾ ملائيندڙ عالمي غير منافع بخش تنظيم.",
+                isRtl: true
+            },
+            ar: {
+                announcement: "تعليم القرآن (QE) - منظمة غير ربحية برعاية متجر أشفق علي زرداري ش.ذ.م.",
+                heroTitle: "تطوير القلوب، وبرمجة مستقبل الإيمان.",
+                heroSubtitle: "المنظمة الدولية الرائدة للربط بين مراكز المعرفة الإسلامية وصناعة التكنولوجيا الحديثة.",
+                isRtl: true
+            }
+        };
+
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Theme Switcher Logic
+        function toggleTheme() {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                updateThemeIcons(false);
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                updateThemeIcons(true);
+            }
+        }
+
+        function updateThemeIcons(isDark) {
+            const sun = document.getElementById('theme-icon-sun');
+            const moon = document.getElementById('theme-icon-moon');
+            if (isDark) {
+                if (sun) sun.classList.remove('hidden');
+                if (moon) moon.classList.add('hidden');
+            } else {
+                if (sun) sun.classList.add('hidden');
+                if (moon) moon.classList.remove('hidden');
+            }
+        }
+
+        // Auto Detect Theme Preference
+        (function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark' || (!savedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                updateThemeIcons(true);
+            } else {
+                document.documentElement.classList.remove('dark');
+                updateThemeIcons(false);
+            }
+        })();
+
+        // Language Switcher Logic
+        function changeLanguage(langKey) {
+            const lang = translations[langKey] || translations['en'];
+            
+            // Set Text
+            document.getElementById('announcement-text').innerText = lang.announcement;
+            document.getElementById('hero-title').innerText = lang.heroTitle.split(',')[0] + ',';
+            document.getElementById('hero-subtitle').innerText = lang.heroSubtitle;
+
+            // Handle RTL/LTR
+            if (lang.isRtl) {
+                document.body.classList.add('rtl', 'font-urdu');
+            } else {
+                document.body.classList.remove('rtl', 'font-urdu');
+            }
+        }
+
+        // Mobile Menu Drawer Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Form Submit Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            showToast("JazakAllah! Your message has been sent to our team.");
+            e.target.reset();
+        }
+
+        // Toast Notification System
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-message').innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3500);
+        }
+
+        // Modal Handler Logic
+        function openModal(modalType) {
+            const backdrop = document.getElementById('modal-backdrop');
+            const container = document.getElementById('modal-content');
+            
+            let title = "", content = "";
+            
+            if (modalType === 'modal-privacy') {
+                title = "Privacy Policy & Data Ethics";
+                content = "<p class='text-xs leading-relaxed text-slate-600 dark:text-slate-300'>Quran Education (QE) and Ashfaq Ali Zardari Store, LLP strictly adhere to global privacy frameworks including GDPR and local data protection laws. We never sell, monetize, or track user behavioral data across our mobile applications or web platforms.</p>";
+            } else if (modalType === 'modal-terms') {
+                title = "Terms & Conditions of Service";
+                content = "<p class='text-xs leading-relaxed text-slate-600 dark:text-slate-300'>All content, native translations, and open-source software tools provided by Quran Education (QE) are for educational, non-profit, and spiritual advancement of the Muslim Ummah under Creative Commons licensing.</p>";
+            } else if (modalType === 'modal-cookies') {
+                title = "Cookie & Storage Policy";
+                content = "<p class='text-xs leading-relaxed text-slate-600 dark:text-slate-300'>We use minimal essential local storage on your device solely to save user interface preferences such as dark mode and selected language.</p>";
+            } else if (modalType === 'modal-standards') {
+                title = "OIC Islamic & Ethical Tech Compliance";
+                content = "<p class='text-xs leading-relaxed text-slate-600 dark:text-slate-300'>Quran Education operates under ethical guidelines consistent with OIC (Organization of Islamic Cooperation) SMIIC standards for digital content, ensuring Sharia compliance, accuracy of Quranic text, and complete absence of interest-based or non-permissible features.</p>";
+            }
+
+            container.innerHTML = `<h3 class='text-lg font-bold text-slate-900 dark:text-white mb-2'>${title}</h3>${content}`;
+            backdrop.classList.remove('hidden');
+            backdrop.classList.add('flex');
+        }
+
+        function closeModal() {
+            const backdrop = document.getElementById('modal-backdrop');
+            backdrop.classList.add('hidden');
+            backdrop.classList.remove('flex');
+        }
+    </script>
+</body>
+</html>
